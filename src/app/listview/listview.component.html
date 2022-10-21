@@ -1,0 +1,46 @@
+<h1>Customers</h1>
+
+
+<h4>CLICK LIST VIEW TO SEE THE DETAILS IN LIST </h4>
+<div class="wrapper" >
+    <input type="button"  value="LIST VIEW" (click)="printdata($event)" >
+ </div>
+ <p align="right">
+    <input type="button" value="ADD NEW CUSTOMER" />
+  </p>
+
+ <div class="text-right">
+    <h4>FILTER TEXT</h4>
+    <input type="text" placeholder="search by name" 
+    style="width:350px; padding:2px 20px;margin:10px 0px;height:30px"
+    [(ngModel)]="filterText">
+    </div>
+    
+<div>
+<div class="card my-5">
+    <div class="card-body">
+    <table class=" table  table-bordered table_striped table-hover">
+        <thead class="thread-dark">
+         <tr>
+             <th>ID</th>
+             <th>NAME</th>
+             <th>USER NAME</th>
+             <th>EMAIL ID</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | filteruser : filterText">
+               <td>{{user.id}}</td>
+               <td>{{user.name |lowercase}}</td>
+               <td>{{user.username }}</td>
+               <td>{{user.email}}</td>
+             </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    

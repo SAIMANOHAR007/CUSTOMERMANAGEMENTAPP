@@ -1,0 +1,29 @@
+<div class="wrapper" >
+    <input type="button"  value="LIST VIEW" (click)="printdata($event)" >
+ </div>
+<div class="card my-5">
+    <div class="card-body">
+    <table class=" table  table-bordered table_striped table-hover">
+        <thead class="thread-dark">
+         <tr>
+             <th>ID</th>
+             <th>NAME</th>
+             <th>USER NAME</th>
+             <th>EMAIL ID</th>
+             <th>ORDER</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users ">
+               <td>{{user.id}}</td>
+               <td>{{user.name |lowercase}}</td>
+               <td>{{user.username }}</td>
+               <td>{{user.email}}</td>
+             </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    
+    
+    
